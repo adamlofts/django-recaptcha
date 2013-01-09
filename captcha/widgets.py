@@ -19,7 +19,7 @@ class ReCaptcha(forms.widgets.Widget):
         super(ReCaptcha, self).__init__(*args, **kwargs)
 
     def render(self, name, value, attrs=None):
-        return mark_safe(u'%s' % client.displayhtml(self.public_key, \
+        return mark_safe('%s' % client.displayhtml(self.public_key, \
                 self.js_attrs, use_ssl=self.use_ssl))
 
     def value_from_datadict(self, data, files, name):
